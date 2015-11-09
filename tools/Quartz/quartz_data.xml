@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<quartz>
+	<job>
+		<job-detail>
+			<name><!-- job name --></name>		
+			<job-class><!-- job classpath --></job-class>		
+		</job-detail>
+		<trigger>
+			<cron>
+				<name><!-- trigger name --></name>						
+				<job-group>DEFAULT</job-group>
+				<cron-expression>* 10 * * * ?</cron-expression>				
+			</cron>
+		</trigger>
+	</job>
+	
+	<job>
+		<job-detail>
+			<name><!-- job name --></name>		
+			<job-class><!-- job classpath --></job-class>		
+		</job-detail>
+		<trigger>
+			<cron>
+				<name><!-- trigger name --></name>						
+				<job-group>DEFAULT</job-group>
+				<cron-expression>* 20 * * * ?</cron-expression>				
+			</cron>
+		</trigger>
+	</job>
+</quartz>
+
