@@ -12,7 +12,7 @@ import javax.resource.NotSupportedException;
 
 public class DeveloperTool {
 	
-	//map to javaBean
+	//map 轉成 javaBean,目前支援的資料型態還不完整
 	public static <T> T invokeMapToBean(Class<T> instance,Map<String,Object> map) throws Exception{
 		if(instance!=null && map!=null && !map.isEmpty()){
 			T newObject = instance.newInstance();
@@ -52,6 +52,7 @@ public class DeveloperTool {
 		return null;
 	}
 	
+	//取得非null、非final的成員變數
 	public static String beanToString(Object obj){
 		StringBuffer sb = new StringBuffer();
 		Field[] declaredFields = obj.getClass().getDeclaredFields();
