@@ -10,6 +10,12 @@ import java.util.Map.Entry;
 
 import javax.resource.NotSupportedException;
 
+/**
+ * 
+ * @author Kevin
+ * @version 2015/11/27
+ *
+ */
 public class DeveloperTool {
 	
 	//map 轉成 javaBean,目前支援的資料型態還不完整
