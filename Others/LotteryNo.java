@@ -20,7 +20,7 @@ public class LotteryNo {
 	
 	public static void main(String[] args) throws Exception{
 		Integer number = null;
-		while(randomNumber.size()<count){
+		while(randomNumber.size() < count){
 			number = getRandomValue();
 			randomNumber.add(number);
 		}
