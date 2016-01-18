@@ -15,7 +15,11 @@ public class JDBC_Oracle_Test {
 	static final String password = "ADMIN";
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException{
-		Class.forName(driverPackage);
+		/**
+		 * http://openhome.cc/Gossip/JavaGossip-V2/ConnectDB-JDBC4.htm
+		 * The JDBC 4.0 standard support is provided by JDK 1.6 and later versions.
+		 */
+//		Class.forName(driverPackage);
 		return DriverManager.getConnection(url, user, password);
 	}
 	
