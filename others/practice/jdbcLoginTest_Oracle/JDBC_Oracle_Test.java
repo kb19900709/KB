@@ -19,7 +19,7 @@ public class JDBC_Oracle_Test {
 		 * http://openhome.cc/Gossip/JavaGossip-V2/ConnectDB-JDBC4.htm
 		 * The JDBC 4.0 standard support is provided by JDK 1.6 and later versions.
 		 */
-//		Class.forName(driverPackage);
+		Class.forName(driverPackage);
 		return DriverManager.getConnection(url, user, password);
 	}
 	
