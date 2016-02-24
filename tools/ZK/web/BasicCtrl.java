@@ -10,11 +10,19 @@ import org.zkoss.zk.ui.select.Selectors;
 import com.test.constraint.BasicValidate;
 
 public class BasicCtrl  {
+	protected Component view;
+	
 	protected BasicValidate validate;
 
+	/**
+	 * Use @AfterCompose(superclass = true) in subclass.
+	 *
+	 * @param view
+	 */
 	@AfterCompose
     public void basicAfterCompose(@ContextParam(ContextType.VIEW) Component view){
 		try{
+			this.view = view;
 			Selectors.wireComponents(view, this, false);
 		}catch(Exception e){
 			e.printStackTrace();

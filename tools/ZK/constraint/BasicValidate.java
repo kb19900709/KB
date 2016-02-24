@@ -8,6 +8,8 @@ import org.zkoss.zk.ui.WrongValueException;
 import org.zkoss.zul.SimpleConstraint;
 import org.zkoss.zul.impl.InputElement;
 
+import com.test.util.ZulUtil;
+
 /**
  * 
  * @author Kevin Liao
@@ -26,21 +28,8 @@ public class BasicValidate {
 	 * <p>是否跳出該欄位不符合檢核規則的訊息 default:true</p>
 	 */
 	public BasicValidate(Component view,boolean popup){
-		setCompList(getAllInputComponent(view));
+		setCompList(ZulUtil.getAllComponentByTyped(view, InputElement.class));
 		initInputConstraint(popup);
-	}
-
-	private List<InputElement> getAllInputComponent(Component comp){
-		List<InputElement> compList = new ArrayList<InputElement>();
-		for(Component tempComp:comp.getChildren()){
-			if(tempComp instanceof InputElement){
-				compList.add((InputElement)tempComp);
-			}		
-			if(tempComp.getChildren()!=null && tempComp.getChildren().size()>0){
-				compList.addAll(getAllInputComponent(tempComp));
-			}
-		}
-		return compList;
 	}
 	
 	private void initInputConstraint(boolean popup){
