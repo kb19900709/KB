@@ -2,7 +2,6 @@ package com.test;
 
 import java.util.List;
 
-import org.springframework.dao.DataAccessException;
 import org.springframework.transaction.TransactionStatus;
 
 /**
@@ -16,7 +15,7 @@ public interface CrossDB {
 	 * @return
 	 * @throws RuntimeException
 	 */
-	List<TransactionStatus> openExtraTM(String... extraOpenTxID) throws RuntimeException;
+	List<TransactionStatus> openExtraTM(String... extraOpenTxID);
 	
 	void commit(List<TransactionStatus> statusRecord);
 

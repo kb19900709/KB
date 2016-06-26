@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
@@ -45,7 +44,7 @@ public class CrossDB_Impl implements CrossDB{
 	}
 
 	@Override
-	public List<TransactionStatus> openExtraTM(String... extraOpenTmIDs) throws RuntimeException{
+	public List<TransactionStatus> openExtraTM(String... extraOpenTmIDs) {
 		//如果參數為空，則將開啟所有的 TM 控制
 		if(ArrayUtils.isEmpty(extraOpenTmIDs)){
 			String warnMsg = "CrossDB_Impl.openExtraTM input params is null， CrossDB_Impl will open all TM control";
