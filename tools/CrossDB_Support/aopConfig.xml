@@ -8,8 +8,9 @@
 	<!-- 方法攔截器 -->
 	<bean id="crossDB_Advice" class="com.test.CrossDB_Interceptor"/>
 	<aop:config>   
-		<!-- 設定指定攔截位置 -->
+		<!-- 設定指定攔截 pointCut -->
 		<aop:pointcut id="methodPoint" expression="execution(* com.test.*.*(..)) "/>  
+		<!-- advisor 結合  pointCut+advice -->
 		<aop:advisor pointcut-ref="methodPoint" advice-ref="crossDB_Advice"/>  
 	</aop:config>
 	 
